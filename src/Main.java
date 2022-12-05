@@ -6,15 +6,22 @@ public class Main {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		int count = 0;
-		for (int i=1;i<=n-3;i++) {
-			for (int j=i+1;j<=n-2;j++) {
-				for (int k=j+1;k<=n-1;k++) {
-					count ++;
-				}
-			}
+		System.out.println(combination(n-1, 3));
+	}
+
+	private static int combination(int n, int m) {
+		// TODO Auto-generated method stub
+		int result = 1;
+		for (int i=0;i<m;i++) {
+			result *= n;
+			n--;
 		}
-		System.out.println(count);
+		int a=m;
+		for (int i=0;i<m;i++) {
+			result /= a;
+			a--;
+		}
+		return result;
 	}
 
 }
